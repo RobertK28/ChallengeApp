@@ -1,2 +1,18 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿var name = "Ewa";
+var age = 28;
+bool plecKobieta = true;
+//plecKobieta = false;
+
+if (plecKobieta && age < 30)
+{
+    Console.WriteLine("Kobieta poinżej 30 lat");
+}
+else if (name == "Ewa" && age == 33)
+{
+    Console.WriteLine("Ewa, lat 33");
+}
+else if (!(plecKobieta) && age < 18)
+{
+    Console.WriteLine("Niepełnoletni Mężczyzna");
+}
+
