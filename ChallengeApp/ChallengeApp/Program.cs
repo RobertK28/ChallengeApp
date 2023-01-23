@@ -1,37 +1,39 @@
 ﻿
+using System.Diagnostics.CodeAnalysis;
 
-var name = "Ewa";
-var age = 28;
-bool plecKobieta = true;
-//plecKobieta = false;
+int number = 4566;
+string numberInString = number.ToString();
+char[] letters = numberInString.ToCharArray();
+List<char> charsNr = numberInString.ToCharArray().ToList();
 
 
-if (plecKobieta && age < 30)
-{
-    Console.WriteLine("Kobieta poinżej 30 lat");
-}
-else if (name == "Ewa" && age == 33)
-{
-    Console.WriteLine("Ewa, lat 33");
-}
-else if (!(plecKobieta) && age < 18)
-{
-    Console.WriteLine("Niepełnoletni Mężczyzna");
-}
+//int numberRange = 1234567890;
+//string numberRangeInString = numberRange.ToString();
+string numberRangeInString = "0123456789";
+char[] lettersRange = numberRangeInString.ToCharArray();
+List<char> charsRange = new List<char>();
+charsRange = numberRangeInString.ToCharArray().ToList();
 
-if (plecKobieta)
+//Listy
+foreach (char chRange in charsRange)
 {
-    if (age < 30)
+    int i = 0; 
+    foreach (char chNr in charsNr)
     {
-        Console.WriteLine("Kobieta poinżej 30 lat");
+        if (chRange == chNr)
+            i++;
     }
-    else if (name == "Ewa" && age == 33)
-    {
-        Console.WriteLine("Ewa, lat 33");
-    }
+    Console.WriteLine(chRange + " => " + i);
 }
-else if (!plecKobieta)
-    if (age < 18)
+
+// Tablice
+foreach (var nrRange in lettersRange)
+{ 
+    int i = 0;
+    foreach (var nr in letters)
     {
-        Console.WriteLine("Niepełnoletni Mężczyzna");
-    }
+        if (nrRange == nr)
+            i++;
+    }   
+    //Console.WriteLine(nrRange + " => " + i);
+}
