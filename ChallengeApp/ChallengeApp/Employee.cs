@@ -1,6 +1,6 @@
 ﻿namespace ChallengeApp
 {
-    internal class Employee
+    public class Employee
     {
         List<int> pointsOfEmployee = new List<int>();
        
@@ -33,7 +33,13 @@
               
         public void AddPointsOfEmployee(int point)
         { 
+           
             this.pointsOfEmployee.Add(point);
+        }
+
+        public void AddNegativePointsOfEmployee(int point) 
+        {
+            this.pointsOfEmployee.Add(-point);
         }
       
     }
