@@ -1,6 +1,7 @@
 ﻿using ChallengeApp;
 using System.Runtime.CompilerServices;
 
+/*
 Employee employee1 = new Employee("Tom", "Cruise", 25);
 Employee employee2 = new Employee("Brad", "Pitt", 32);
 Employee employee3 = new Employee("Tomasz", "Kot", 28);
@@ -9,7 +10,7 @@ Employee employee3 = new Employee("Tomasz", "Kot", 28);
 employee1.AddPointsOfEmployee(1);
 employee1.AddPointsOfEmployee(3);
 employee1.AddPointsOfEmployee(5);
-employee1.AddPointsOfEmployee(6);
+employee1.AddNegativePointsOfEmployee(6);
 employee1.AddPointsOfEmployee(4);
 
 // Points of Employee2
@@ -68,7 +69,24 @@ Console.WriteLine("\n");
 
 Console.WriteLine($"Największą liczbę ocen zdobył/a {employeeWithMaxRating.DataOfEmployee} z wynikiem : { maxRating }  punktów.");
 
+*/
+
+var employee1 = new Employee_v2("Tomasz", "Kot");
+employee1.AdGrade("TOm");
+employee1.AdGrade("4000");
+employee1.AdGrade(2.34d);
+employee1.AdGrade(2);
+employee1.AdGrade(3);
+var statistics = employee1.GetStatistics();
+Console.WriteLine($"Average: {statistics.Average:N2}");
+Console.WriteLine($"Max: {statistics.Max}");
+Console.WriteLine($"Min: {statistics.Min}");
 
 
 
-
+/*SetSth(ref statistics);
+void SetSth(ref Statistics statistics)
+{
+    statistics = new Statistics();
+}
+*/
