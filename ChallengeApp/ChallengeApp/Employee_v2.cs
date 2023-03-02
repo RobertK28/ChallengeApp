@@ -49,7 +49,7 @@ namespace ChallengeApp
             float gradeInFloat = (float)grade;
             this.AdGrade(gradeInFloat);
         }
-
+        //
 
         
         public Statistics GetStatistics()
