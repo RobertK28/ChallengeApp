@@ -81,7 +81,22 @@ var statistics = employee1.GetStatistics();
 Console.WriteLine($"Average: {statistics.Average:N2}");
 Console.WriteLine($"Max: {statistics.Max}");
 Console.WriteLine($"Min: {statistics.Min}");
-
+var statisticsForeach = employee1.GetStatisticsForeach();
+Console.WriteLine($"AverageForeach: {statisticsForeach.Average:N2}");
+Console.WriteLine($"MaxForeach: {statisticsForeach.Max}");
+Console.WriteLine($"MinForeach: {statisticsForeach.Min}");
+var statisticsFor = employee1.GetStatisticsFor();
+Console.WriteLine($"AverageFor: {statisticsFor.Average:N2}");
+Console.WriteLine($"MaxFor: {statisticsFor.Max}");
+Console.WriteLine($"MinFor: {statisticsFor.Min}");
+var statisticsDoWhile = employee1.GetStatisticsdDoWhile();
+Console.WriteLine($"AverageDoWhile: {statisticsDoWhile.Average:N2}");
+Console.WriteLine($"MaxDoWhile: {statisticsDoWhile.Max}");
+Console.WriteLine($"MinDoWhile: {statisticsDoWhile.Min}");
+var statisticsWhile = employee1.GetStatisticsWhile();
+Console.WriteLine($"AverageWhile: {statisticsWhile.Average:N2}");
+Console.WriteLine($"MaxWhile: {statisticsWhile.Max}");
+Console.WriteLine($"MinWhile: {statisticsWhile.Min}");
 
 
 /*SetSth(ref statistics);
