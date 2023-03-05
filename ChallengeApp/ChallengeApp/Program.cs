@@ -75,29 +75,20 @@ var employee1 = new Employee_v2("Tomasz", "Kot");
 employee1.AdGrade("TOm");
 employee1.AdGrade("4000");
 employee1.AdGrade(2.34d);
-employee1.AdGrade(2);
-employee1.AdGrade(3);
+employee1.AdGrade(10);
+employee1.AdGrade(20);
+
+employee1.AdGrade('B');
+//employee1.AdGrade('a');
 var statistics = employee1.GetStatistics();
 Console.WriteLine($"Average: {statistics.Average:N2}");
 Console.WriteLine($"Max: {statistics.Max}");
 Console.WriteLine($"Min: {statistics.Min}");
-var statisticsForeach = employee1.GetStatisticsForeach();
-Console.WriteLine($"AverageForeach: {statisticsForeach.Average:N2}");
-Console.WriteLine($"MaxForeach: {statisticsForeach.Max}");
-Console.WriteLine($"MinForeach: {statisticsForeach.Min}");
-var statisticsFor = employee1.GetStatisticsFor();
-Console.WriteLine($"AverageFor: {statisticsFor.Average:N2}");
-Console.WriteLine($"MaxFor: {statisticsFor.Max}");
-Console.WriteLine($"MinFor: {statisticsFor.Min}");
-var statisticsDoWhile = employee1.GetStatisticsdDoWhile();
-Console.WriteLine($"AverageDoWhile: {statisticsDoWhile.Average:N2}");
-Console.WriteLine($"MaxDoWhile: {statisticsDoWhile.Max}");
-Console.WriteLine($"MinDoWhile: {statisticsDoWhile.Min}");
-var statisticsWhile = employee1.GetStatisticsWhile();
-Console.WriteLine($"AverageWhile: {statisticsWhile.Average:N2}");
-Console.WriteLine($"MaxWhile: {statisticsWhile.Max}");
-Console.WriteLine($"MinWhile: {statisticsWhile.Min}");
 
+foreach (var item in employee1.grades) 
+{ 
+    Console.WriteLine(item);
+}
 
 /*SetSth(ref statistics);
 void SetSth(ref Statistics statistics)
