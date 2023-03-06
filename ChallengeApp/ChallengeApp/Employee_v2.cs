@@ -7,6 +7,7 @@ namespace ChallengeApp
     public class Employee_v2
     {
         public List<float> grades = new List<float>();
+        public Employee_v2() { }
         public Employee_v2(string name, string surname)
         {
             this.Name = name;
@@ -16,7 +17,7 @@ namespace ChallengeApp
         public string Name { get; set; }
         public string Surname { get; set; }
 
-        public void AdGrade(float grade) 
+        public void AddGrade(float grade) 
         {
             if (grade >= 0 && grade <= 100)
             {
@@ -28,73 +29,51 @@ namespace ChallengeApp
             }   
             
         }
-        public void AdGrade(string grade)
+        public void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
             {
-                this.AdGrade(result);
+                this.AddGrade(result);
             }
             else
             {
                 Console.WriteLine("String is not float");
             }
         }
-         public void AdGrade(double grade)
+         public void AddGrade(double grade)
          {
             float gradeInFloat = (float)grade;
-            this.AdGrade(gradeInFloat);
+            this.AddGrade(gradeInFloat);
          }
 
-        public void AdGrade(long grade) 
+        public void AddGrade(long grade) 
         {
             float gradeInFloat = (float)grade;
-            this.AdGrade(gradeInFloat);
+            this.AddGrade(gradeInFloat);
         }
 
         public void AddGrade(char grade)
         {
-            /*
-            if (grade == 'A' || grade == 'a')
-            {
-                this.grades.Add(100);
-            }
-            else if (grade == 'B' || grade == 'b')
-            {
-                this.grades.Add(80);
-            }
-            else if (grade == 'C' || grade == 'c')
-            {
-                this.grades.Add(60);
-            }
-            else if (grade == 'D' || grade == 'd')
-            {
-                this.grades.Add(40);
-            }
-            else if (grade == 'E' || grade == 'e')
-            {
-                this.grades.Add(20);
-            }
-            else
-            {
-                Console.WriteLine("zła litera");
-            }
-            */
-
             switch (grade) 
             { 
                 case 'A':
+                case 'a':
                     this.grades.Add(100);
                     break;
                 case 'B':
+                case 'b':
                     this.grades.Add(80);
                     break;
                 case 'C':
+                case 'c':
                     this.grades.Add(60);
                     break;
                 case 'D':
+                case 'd':
                     this.grades.Add(40);
                     break;
                 case 'E':
+                case 'e':
                     this.grades.Add(20);
                     break;
                 default:
@@ -123,10 +102,29 @@ namespace ChallengeApp
             }
         
             statistics.Average /= this.grades.Count;
-            return statistics;
-        
-        }
 
+            switch (statistics.Average) 
+            {
+                case var average when average >= 80:
+                    statistics.AverageLetter = 'A';
+                    break;
+                case var average when average >= 60:
+                    statistics.AverageLetter = 'B';
+                    break;
+                case var average when average >= 40:
+                    statistics.AverageLetter = 'C';
+                    break;
+                case var average when average >= 20:
+                    statistics.AverageLetter = 'D';
+                    break;
+                default:
+                    statistics.AverageLetter = 'E';
+                    break;
+                    
+            }
+
+            return statistics;
+        }
 
     }
 }
