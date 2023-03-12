@@ -6,6 +6,7 @@ namespace ChallengeApp
 {
     public class Employee_v2
     {
+        
         public List<float> grades = new List<float>();
         public Employee_v2() { }
         public Employee_v2(string name, string surname)
@@ -25,7 +26,7 @@ namespace ChallengeApp
             }
             else
             {
-                Console.WriteLine("Invalid grade value");
+                throw new Exception("Invalid grade value");
             }   
             
         }
@@ -37,7 +38,7 @@ namespace ChallengeApp
             }
             else
             {
-                Console.WriteLine("String is not float");
+                throw new Exception("String is not float");
             }
         }
          public void AddGrade(double grade)
@@ -77,8 +78,8 @@ namespace ChallengeApp
                     this.grades.Add(20);
                     break;
                 default:
-                    Console.WriteLine("Wrong Letter");
-                    break;
+                    throw new Exception("Wrong Letter");
+                    
             }
 
         }
