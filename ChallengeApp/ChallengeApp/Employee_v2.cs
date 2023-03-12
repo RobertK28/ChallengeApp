@@ -27,7 +27,8 @@ namespace ChallengeApp
             else
             {
                 throw new Exception("Invalid grade value");
-            }   
+            }
+          
             
         }
         public void AddGrade(string grade)
@@ -36,9 +37,39 @@ namespace ChallengeApp
             {
                 this.AddGrade(result);
             }
-            else
+            else if(char.TryParse(grade, out char charResult))
             {
-                throw new Exception("String is not float");
+                
+                switch (charResult)
+                {
+                    case 'A':
+                    case 'a':
+                        this.grades.Add(100);
+                        break;
+                    case 'B':
+                    case 'b':
+                        this.grades.Add(80);
+                        break;
+                    case 'C':
+                    case 'c':
+                        this.grades.Add(60);
+                        break;
+                    case 'D':
+                    case 'd':
+                        this.grades.Add(40);
+                        break;
+                    case 'E':
+                    case 'e':
+                        this.grades.Add(20);
+                        break;
+                    default:
+                        throw new Exception("Wrong Letter");
+
+                }
+            }
+              else
+            {
+                throw new Exception("Invalid grade value");
             }
         }
          public void AddGrade(double grade)
