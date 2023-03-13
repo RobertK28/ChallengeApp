@@ -4,20 +4,23 @@ using System.Text.RegularExpressions;
 
 namespace ChallengeApp
 {
-    public class Employee_v2
+    public class Employee_v2 : Person
     {
         
         public List<float> grades = new List<float>();
-        public Employee_v2() { }
+
+        public Employee_v2()
+            : this("no name", "no surname", "no sex")
+        { }
         public Employee_v2(string name, string surname)
-        {
-            this.Name = name;
-            this.Surname = surname;
+            : this(name, surname, "no sex") 
+        { }
+        public Employee_v2(string name, string surname, string sex)
+            : base(name, surname, sex)
+        {       
         }
 
-        public string Name { get; set; }
-        public string Surname { get; set; }
-
+        
         public void AddGrade(float grade) 
         {
             if (grade >= 0 && grade <= 100)
