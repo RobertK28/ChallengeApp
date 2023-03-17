@@ -4,11 +4,12 @@ using System.Text.RegularExpressions;
 
 namespace ChallengeApp
 {
-    public class Employee_v2 : Person
+    public class Employee_v2 :  Person, IEmployee
     {
         
         public List<float> grades = new List<float>();
 
+        
         public Employee_v2()
             : this("no name", "no surname", "no sex")
         { }
@@ -17,10 +18,18 @@ namespace ChallengeApp
         { }
         public Employee_v2(string name, string surname, string sex)
             : base(name, surname, sex)
-        {       
+        {
+            
         }
-
-        
+        /*
+        public Employee_v2(string name, string surname)
+        {
+            this.Name = name;
+            this.Surname = surname;
+        }
+        public string Name { get; private set; }
+        public string Surname { get; private set; }
+        */
         public void AddGrade(float grade) 
         {
             if (grade >= 0 && grade <= 100)
@@ -128,6 +137,7 @@ namespace ChallengeApp
 
             
             foreach (var grade in this.grades) 
+
             {
                                
                 statistics.Max = Math.Max(statistics.Max, grade);
