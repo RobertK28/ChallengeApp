@@ -27,9 +27,42 @@ Console.WriteLine(" Pracownik: Można dodać dowolną ilość pkt w zakresie od 
 Console.WriteLine(" Lub wpisując literę, zgodnie z punktacją kadry kierowniczej"); 
 Console.WriteLine();
 
+
+var employee = new EmployeeInFile("Tomasz", "Kot");
+//employee.AddGrade(0.5f);
+
+while (true)
+{
+    Console.WriteLine("Podaj ocenę pracownika");
+    var input = Console.ReadLine();
+    if (input == "q")
+    {
+        break;
+    }
+    try
+    {
+        employee.AddGrade(input);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Exception cathced: {ex.Message}");
+    }
+}
+Console.WriteLine();
+var statisticsEmployeeInFile = employee.GetStatistics();
+Console.WriteLine($"Average: {statisticsEmployeeInFile.Average}");
+Console.WriteLine($"Min: {statisticsEmployeeInFile.Min}");
+Console.WriteLine($"Max: {statisticsEmployeeInFile.Max}");
+Console.WriteLine($"AverageLetter: {statisticsEmployeeInFile.AverageLetter}");
+
+
+
+
+/*
 var employee = new Employee_v2();
 var supervisor = new Supervisor();
 
+/*
 var inputWho = Console.ReadLine();
 
 if (inputWho == "Kierownik")
@@ -88,4 +121,4 @@ else if (inputWho == "Pracownik")
     Console.WriteLine($"AverageLetter: {statisticsEmployee.AverageLetter}");
 }
 
-
+*/
