@@ -28,8 +28,17 @@ Console.WriteLine(" Lub wpisując literę, zgodnie z punktacją kadry kierownicz
 Console.WriteLine();
 
 
-var employee = new EmployeeInFile("Tomasz", "Kot");
+var employee = new EmployeeInMemory("Tomasz", "Kot");
+employee.GradeAdded += EmployeeGradeAdded;
+
+void EmployeeGradeAdded(object sender, EventArgs args)
+{
+    Console.WriteLine("Dodano Nową Ocenę");
+}
+
 //employee.AddGrade(0.5f);
+
+
 
 while (true)
 {
